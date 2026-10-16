@@ -6,7 +6,7 @@
   padding-inline: 10px;
   border: none;
   border-radius: var(--border-radius);
-  background-color: var(--background-color);
+  background-color: var(--button-color);
   color: var(--font-color);
   cursor: pointer;
 

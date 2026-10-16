@@ -16,6 +16,7 @@ export const ToggleTheme = (props: ToggleThemeProps) => {
     <Button
       className={`${styles.toggle} ${className ?? ""}`}
       onClick={toggleTheme}
+      title="Сменить тему"
     >
       {
         theme === "dark"

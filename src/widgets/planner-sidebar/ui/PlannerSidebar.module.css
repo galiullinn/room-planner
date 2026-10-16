@@ -1,0 +1,12 @@
+.sidebar {
+  width: var(--sidebar-width);
+  padding: 10px;
+  background-color: var(--element-color);
+  overflow: hidden;
+  transition: width 0.2s ease, height 0.2s ease;
+  touch-action: none;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
