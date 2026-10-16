@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { ROUTES } from "@/shared/config/routes.config";
 import LogoIcon from "@/shared/assets/icons/logo.svg?react";
 import styles from "./Navbar.module.css";
+import { ToggleTheme } from "@/features/toggle-theme";
 
 interface NavbarProps {
   className?: string;
@@ -23,7 +24,7 @@ export const Navbar = (props: NavbarProps) => {
           <Link to={ROUTES.GUIDE}>Guide</Link>
         </nav>
         <div className={styles.tools}>
-          
+          <ToggleTheme />
         </div>
       </div>
     </div>
