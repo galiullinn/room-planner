@@ -1,3 +1,4 @@
+import { ToggleViewMode } from "@/features/toggle-view-mode";
 import styles from "./PlannerToolbar.module.css";
 
 interface PlannerToolbarProps {
@@ -9,7 +10,7 @@ export const PlannerToolbar = (props: PlannerToolbarProps) => {
 
   return (
     <div className={`${styles.toolbar} ${className ?? ""}`}>
-      toolbar
+      <ToggleViewMode />
     </div>
   );
 };

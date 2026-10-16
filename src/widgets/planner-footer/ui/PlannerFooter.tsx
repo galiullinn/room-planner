@@ -1,3 +1,4 @@
+import { ToggleGridVisibility } from "@/features/toggle-grid-visibility";
 import styles from "./PlannerFooter.module.css";
 
 interface PlannerFooterProps {
@@ -9,7 +10,7 @@ export const PlannerFooter = (props: PlannerFooterProps) => {
 
   return (
     <div className={`${styles.footer} ${className ?? ""}`}>
-      footer
+      <ToggleGridVisibility />
     </div>
   );
 };

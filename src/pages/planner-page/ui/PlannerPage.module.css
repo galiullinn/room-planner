@@ -10,6 +10,7 @@
 .viewport {
   position: absolute;
   inset: 0;
+  z-index: var(--z-viewport);
 }
 
 .sidebar {
@@ -17,17 +18,20 @@
   top: 0;
   right: 0;
   bottom: var(--footer-height);
+  z-index: var(--z-sidebar);
 }
 
 .footer {
   position: absolute;
   right: 0;
   left: 0;
-  bottom: 0
+  bottom: 0;
+  z-index: var(--z-footer);
 }
 
 .toolbar {
   position: absolute;
   left: var(--element-gap);
   bottom: calc(var(--footer-height) + var(--element-gap));
+  z-index: var(--z-toolbar);
 }
