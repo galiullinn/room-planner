@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/shared/ui/button";
-import { deleteObject, useObjects } from "@/entities/object";
 import ToggleIcon from "@/shared/assets/icons/toggle.svg?react";
 import styles from "./PlannerSidebar.module.css";
+import { OutlinerList } from "@/features/objects-outliner";
 
 interface PlannerSidebarProps {
   className?: string;
@@ -12,7 +12,6 @@ export const PlannerSidebar = (props: PlannerSidebarProps) => {
   const { className } = props;
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
   const toggleCollpased = () => setIsCollapsed(prev => !prev);
-  const objects = useObjects();
 
   return (
     <div className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ""} ${className ?? ""}`}>
@@ -25,14 +24,7 @@ export const PlannerSidebar = (props: PlannerSidebarProps) => {
         </Button>
       </div>
       <div className={`${styles.content} ${isCollapsed ? "visually-hidden" : ""}`}>
-        {objects.map((object) => (
-          <div
-            key={object.id}
-          >
-            <span>{object.id}</span>
-            <Button onClick={() => deleteObject(object.id)}>Удалить</Button>
-          </div>
-        ))}
+        <OutlinerList />
       </div>
     </div>
   );

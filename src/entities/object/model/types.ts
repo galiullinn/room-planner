@@ -19,6 +19,7 @@ export type PrimitiveType = "box" | "cylinder" | "cone" | "sphere";
 
 export type SceneObjectBase = {
   id: string;
+  name: string;
   locked: boolean;
   visible: boolean;
 };

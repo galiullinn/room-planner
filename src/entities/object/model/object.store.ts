@@ -15,6 +15,7 @@ interface Actions {
   deleteObject: (id: string) => void;
   selectObject: (id: string) => void;
   clearSelection: () => void;
+  toggleVisibility: (id: string) => void;
 };
 
 interface ObjectState extends InitialState, Actions { };
@@ -30,6 +31,7 @@ const createPrimitive = (type: PrimitiveType): PrimitiveObject => {
   return {
     id: generateId(),
     type: "primitive",
+    name: "Объект",
     locked: false,
     visible: true,
     primitiveType: type,
@@ -45,6 +47,7 @@ const createPrimitive = (type: PrimitiveType): PrimitiveObject => {
 const createWall = (): WallObject => {
   return {
     id: generateId(),
+    name: "Стена",
     type: "wall",
     locked: false,
     visible: true,
@@ -70,6 +73,13 @@ const objectStore: StateCreator<ObjectState> = (set) => ({
   })),
   selectObject: (id: string) => set({ selectedObjectId: id }),
   clearSelection: () => set({ selectedObjectId: null }),
+  toggleVisibility: (id: string) => set((state) => ({ 
+    objects: state.objects.map((object) => 
+      object.id === id
+        ? { ...object, visible: !object.visible }
+        : object,
+    ),
+  }))
 });
 
 const useObjectStore = create<ObjectState>()(
@@ -88,3 +98,4 @@ export const addWall = () => useObjectStore.getState().addWall();
 export const deleteObject = (id: string) => useObjectStore.getState().deleteObject(id);
 export const selectObject = (id: string) => useObjectStore.getState().selectObject(id);
 export const clearSelection = () => useObjectStore.getState().clearSelection();
+export const toggleVisibility = (id: string) => useObjectStore.getState().toggleVisibility(id);

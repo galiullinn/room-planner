@@ -8,8 +8,10 @@ export {
   deleteObject,
   selectObject,
   clearSelection,
+  toggleVisibility,
 } from "./model/object.store";
 
 export type {
   PrimitiveType,
+  SceneObject,
 } from "./model/types";

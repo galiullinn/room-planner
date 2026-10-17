@@ -7,6 +7,13 @@
   touch-action: none;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 5px 0;
+}
+
 .collapsed {
   width: var(--sidebar-width-collapsed);
 }
