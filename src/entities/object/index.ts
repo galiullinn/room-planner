@@ -9,3 +9,7 @@ export {
   selectObject,
   clearSelection,
 } from "./model/object.store";
+
+export type {
+  PrimitiveType,
+} from "./model/types";

@@ -22,8 +22,11 @@
   --z-footer: 10;
   --z-toolbar: 10;
   --z-sidebar: 10;
+  --z-modal: 10;
 
   --element-gap: 10px;
+
+  --overlay-color: rgba(0 0 0 /30%);
 
   --transition-duration: 0.2s;
 }

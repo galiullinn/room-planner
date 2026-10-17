@@ -1,0 +1,15 @@
+.addObject {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  text-align: center;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
