@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { ThemeSwitch } from "@/features/theme-switch";
 import { ROUTES } from "@/shared/config/routes.config";
 import LogoIcon from "@/shared/assets/icons/logo.svg?react";
 import styles from "./Header.module.css";
@@ -23,7 +24,7 @@ export const Header = (props: HeaderProps) => {
           <Link to={ROUTES.GUIDE}>Guide</Link>
         </nav>
         <div className={styles.tools}>
-
+          <ThemeSwitch />
         </div>
       </div>
     </div>
